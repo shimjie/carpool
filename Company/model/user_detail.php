@@ -23,6 +23,8 @@ class user{
 
     function SetPerName($per_name){
         $this->per_name = $per_name;
+        echo $per_name;
+        echo $this->per_name;
     }
 
     function GetPhone(){

@@ -6,7 +6,7 @@
         <h2>Profile</h2>
         <div class="row mt-5 justify-content-center" data-aos="fade-up">
           <div class="col-lg-10">
-
+              <form>
               <div class="form-row">
                 
                 <div class="row">		
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="text-center" style = "margin-top: 4px;"><button class="btn btn-primary" onclick="ProfileAccess()">save</button></div>
-
+            </form>
           </div>
 
         </div>
