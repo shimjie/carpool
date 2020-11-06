@@ -23,7 +23,7 @@
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc())
-                $_SESSION["user_detail"] = new user($row["user_name"], $row["perName"], $row["phone"], $row["email"]);
+                $_SESSION["user_detail"] = serialize(new user($row["user_name"], $row["perName"], $row["phone"], $row["email"]));
         }
         echo "true";
     }

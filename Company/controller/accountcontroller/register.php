@@ -17,7 +17,7 @@
 
         if($mysqli->query($query) && $mysqli->query($query2)){
             $_SESSION["user"] = $user;
-            $_SESSION["user_detail"] = new user($user, $user, $phone, $email);
+            $_SESSION["user_detail"] = serialize(new user($user, $user, $phone, $email));
             echo "True";
         }
         else

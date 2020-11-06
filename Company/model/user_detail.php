@@ -13,8 +13,12 @@ class user{
         $this->email = $email;
     }
 
-    public function GetPerName(){
+    public function GetName(){
         return $this->name;
+    }
+
+    public function GetPerName(){
+        return $this->per_name;
     }
 
     function SetPerName($per_name){
@@ -25,15 +29,15 @@ class user{
         return $this->phone;
     }
 
-    function SetPhone(){
-        return $this->phone;
+    function SetPhone($phone){
+        $this->phone = $phone;
     }
 
     function GetEmail(){
-        return $this->phone;
+        return $this->email;
     }
 
-    function Set    Email($email){
+    function SetEmail($email){
         $this->email = $email;
     }
 }
