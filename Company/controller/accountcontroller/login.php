@@ -26,7 +26,8 @@
                 $_SESSION["user_detail"] = new user($row["user_name"], $row["perName"], $row["phone"], $row["email"]);
         }
 
-    	echo "true";
+        echo "true";
+        echo "second true";
     }
 
     //comment, it is a test
