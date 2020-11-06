@@ -29,4 +29,6 @@
     	echo "true";
     }
 
+    //comment, it is a test
+
 ?>
