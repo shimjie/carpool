@@ -27,7 +27,6 @@
         }
 
         echo "true";
-        echo "second true";
     }
 
     //comment, it is a test
