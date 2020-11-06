@@ -1,7 +1,7 @@
 <?php
 
 class user{
-    $name,
+    private $name,
     $per_name,
     $phone,
     $email;
@@ -13,11 +13,7 @@ class user{
         $this->email = $email;
     }
 
-    function GetName(){
-        return $this->name;
-    }
-
-    function GetPerName(){
+    public function GetPerName(){
         return $this->name;
     }
 
@@ -31,6 +27,14 @@ class user{
 
     function SetPhone(){
         return $this->phone;
+    }
+
+    function GetEmail(){
+        return $this->phone;
+    }
+
+    function Set    Email($email){
+        $this->email = $email;
     }
 }
 ?>

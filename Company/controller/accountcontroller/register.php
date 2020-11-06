@@ -6,7 +6,7 @@
     $email = $_POST['email'];
 
     require "../db_conn.php";
-    include "../../model/user_detail.php"
+    include "../../model/user_detail.php";
 
     $query = "select * from user_infor where username = '$user'";
     $result = $mysqli->query($query);

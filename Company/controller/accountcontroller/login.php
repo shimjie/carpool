@@ -5,7 +5,7 @@
     $pwd = $_POST['pwd'];
 
     require "../db_conn.php";
-    include "../../model/user_detail.php"
+    include "../../model/user_detail.php";
 
     $query = "select * from user_infor where user_name = '$user' and pwd = '$pwd'";
     $result = $mysqli->query($query);
@@ -25,12 +25,7 @@
             while($row = $result->fetch_assoc())
                 $_SESSION["user_detail"] = new user($row["user_name"], $row["perName"], $row["phone"], $row["email"]);
         }
-
-        echo "true";
-        echo "true";
         echo "true";
     }
-
-    //comment, it is a test
 
 ?>
