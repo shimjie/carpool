@@ -17,16 +17,20 @@ class user{
         return $this->name;
     }
 
-    function GetName(){
+    function GetPerName(){
         return $this->name;
     }
 
-    function GetName(){
-        return $this->name;
+    function SetPerName($per_name){
+        $this->per_name = $per_name;
     }
 
-    function GetName(){
-        return $this->name;
+    function GetPhone(){
+        return $this->phone;
+    }
+
+    function SetPhone(){
+        return $this->phone;
     }
 }
 ?>
