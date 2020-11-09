@@ -19,6 +19,10 @@ $(document).ready(function() {
       $('.form').animate({
         'height': panelOne
       }, 200);
+
+      $('#datetimepicker').datetimepicker({
+        locale: 'ru'
+      });
     });
 
     $(".form-toggle.loginpageclosebtn").on('click', function(e) {
@@ -49,16 +53,13 @@ $(document).ready(function() {
     var cpwd = $("#cpassword").val();
     var phone = $("#phone").val();
     var email = $("#email").val();
-
-    console.log(userName);
-    console.log(pwd);
     
     $.ajax({ url: 'controller/accountcontroller/register.php',
             data: {'userName': userName, 'pwd': pwd, 'phone': phone, 'email': email },
             type: 'post',
             success: function(data) {
               console.log(data);
-              location.reload();
+              //location.reload();
             }      
     });
 

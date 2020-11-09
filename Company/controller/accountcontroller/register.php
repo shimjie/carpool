@@ -8,7 +8,7 @@
     require "../db_conn.php";
     include "../../model/user_detail.php";
 
-    $query = "select * from user_infor where username = '$user'";
+    $query = "select * from user_infor where user_name = '$user'";
     $result = $mysqli->query($query);
     if($result->num_rows <= 0){
 
@@ -21,10 +21,10 @@
             echo "True";
         }
         else
-            echo "False!";
+            echo "False";
     }
     else
-        echo "False!";
+        echo "False";
 
     $mysqli->close();
 

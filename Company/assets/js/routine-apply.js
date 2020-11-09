@@ -14,6 +14,8 @@ $(document).ready(function() {
     $(".form-toggle.applypageclosebtn").on('click', function(e) {
       $("#apply-page").hide();
     });
+
+
   });
 
 

@@ -1,6 +1,7 @@
 <?php
     // Start the session
     session_start();
+    require "controller/routinecontroller/routine-load.php"
 ?>
 
 <!doctype html>
@@ -85,188 +86,68 @@
 
   <main id="main">
 
-    </section><!-- End Breadcrumbs -->
-
     <!-- ======= Blog Section ======= -->
-    <section id="blog" class="blog">
-      <div class="container">
+    
+    <?php
+      foreach($routineList as $listItem){
+          echo"
+          <section id='blog' class='blog'>
+              <div class='container'>
+                <div class='row'>
+                  <div class='col-lg-16 entries'>
+                    <article class='entry' data-aos='fade-up'>
+                      <h2 class='entry-title'>Hobart Sharing Routine</h2>
+                      <div class='entry-meta'>
+                        <ul>
+                          <li class='d-flex align-items-center'><i class='icofont-user'></i>". $listItem->GetName(). "</li>
+                          <li class='d-flex align-items-center'><i class='icofont-map-pins'></i>From "
+                          . $listItem->GetArea(). " ". $listItem->GetRegion(). " to 
+                          ". $listItem->GetDesArea(). " ". $listItem->GetDesRegion()."</li>
+                        </ul>
 
-        <div class="row">
+                        <ul>
+                          <li class='d-flex align-items-center'><i class='icofont-car-alt-3'></i> <time>". $listItem->GetStartTime() ."</time></li>";
 
-          <div class="col-lg-16 entries">
+                        if($listItem->GetType() == 1)
+                          echo  "<li class='d-flex align-items-center'><i class='icofont-van'></i> <time>". $listItem->GetReturnTime() ."</time></li>";
 
-            <article class="entry" data-aos="fade-up">
 
-              <h2 class="entry-title">Hobart Sharing Routine</h2>
 
-              <div class="entry-meta">
-                <ul>
-				  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">John Doe</a></li>
-				  <li class="d-flex align-items-center"><i class="icofont-map-pins"></i> <a href="blog-single.html">From A to B</a></li>
-				  
-				  <li class="d-flex align-items-center"><i class="icofont-long-drive"></i> <a href="blog-single.html"><time datetime="2020-03-01">Jan 3, 2020</time></a></li>
-				  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                </ul>
-              </div>
+                        echo  "<li class='d-flex align-items-center'><i class='icofont-wall-clock'></i><time>". $listItem->GetValidTime()."</time></li>
+                        </ul>
+                      </div>
+        
+                      <div class='entry-content'>
+                        <p>
+                          description:
+                          <br>
+                          Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
+                          Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
+                        </p>
 
-              <div class="entry-content">
-                <p>
-				description:
-				<br>
-                  Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
-                  Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
-                </p>
-                <div class="read-more">
-                  <a href="blog-single.html">Apply</a>
+                        <a data-toggle='collapse' href='#collapse_". $listItem->GetId()."' aria-expanded='false' aria-controls='collapse_". $listItem->GetId()."'>
+                          Contact Method
+                        </a>
+                        <div class='entry-meta collapse' id='collapse_". $listItem->GetId()."'>
+                          <ul>
+                            <li class='d-flex align-items-center'><i class='icofont-smart-phone'></i>". $listItem->GetPhone(). "</li>
+                            <li class='d-flex align-items-center'><i class='icofont-envelope-open'></i>". $listItem->GetEmail(). "</li>
+                          </ul>
+                        </div>
+
+                        <div class='read-more'>
+                          <a href='blog-single.html'>Apply</a>
+                        </div>
+                      </div>
+
+                  </article><!-- End blog entry -->
                 </div>
               </div>
-
-			</article><!-- End blog entry -->
-			
-			<article class="entry" data-aos="fade-up">
-
-              <h2 class="entry-title">
-                <a href="blog-single.html">Hobart Sharing Routine</a>
-              </h2>
-
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">John Doe</a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-map-pins"></i> <a href="blog-single.html">From A to B</a></li>
-                  
-                  <li class="d-flex align-items-center"><i class="icofont-long-drive"></i> <a href="blog-single.html"><time datetime="2020-03-01">Jan 3, 2020</time></a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                </ul>
-              </div>
-
-              <div class="entry-content">
-                <p>
-				description:
-				<br>
-                  Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
-                  Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
-                </p>
-                <div class="read-more">
-                  <a href="blog-single.html">Apply</a>
-                </div>
-              </div>
-
-			</article><!-- End blog entry -->
-			
-			<article class="entry" data-aos="fade-up">
-
-              <h2 class="entry-title">
-                <a href="blog-single.html">Hobart Sharing Routine</a>
-              </h2>
-
-              <div class="entry-meta">
-                <ul>
-				  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">John Doe</a></li>
-				  <li class="d-flex align-items-center"><i class="icofont-map-pins"></i> <a href="blog-single.html">From A to B</a></li>
-				  
-				  <li class="d-flex align-items-center"><i class="icofont-long-drive"></i> <a href="blog-single.html"><time datetime="2020-03-01">Jan 3, 2020</time></a></li>
-				  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                </ul>
-              </div>
-
-              <div class="entry-content">
-                <p>
-				description:
-				<br>
-                  Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
-                  Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
-                </p>
-                <div class="read-more">
-                  <a href="blog-single.html">Apply</a>
-                </div>
-              </div>
-
-			</article><!-- End blog entry -->
-			
-
-			<article class="entry" data-aos="fade-up">
-
-              <h2 class="entry-title">
-                <a href="blog-single.html">Hobart Sharing Routine</a>
-              </h2>
-
-              <div class="entry-meta">
-                <ul>
-				  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">John Doe</a></li>
-				  <li class="d-flex align-items-center"><i class="icofont-map-pins"></i> <a href="blog-single.html">From A to B</a></li>
-				  
-				  <li class="d-flex align-items-center"><i class="icofont-long-drive"></i> <a href="blog-single.html"><time datetime="2020-03-01">Jan 3, 2020</time></a></li>
-				  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                </ul>
-              </div>
-
-              <div class="entry-content">
-                <p>
-				description:
-				<br>
-                  Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
-                  Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
-                </p>
-                <div class="read-more">
-                  <a href="blog-single.html">Apply</a>
-                </div>
-              </div>
-
-			</article><!-- End blog entry -->
-			
-
-			<article class="entry" data-aos="fade-up">
-
-              <h2 class="entry-title">
-                <a href="blog-single.html">Hobart Sharing Routine</a>
-              </h2>
-
-              <div class="entry-meta">
-                <ul>
-				  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">John Doe</a></li>
-				  <li class="d-flex align-items-center"><i class="icofont-map-pins"></i> <a href="blog-single.html">From A to B</a></li>
-				  
-				  <li class="d-flex align-items-center"><i class="icofont-long-drive"></i> <a href="blog-single.html"><time datetime="2020-03-01">Jan 3, 2020</time></a></li>
-				  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                </ul>
-              </div>
-
-              <div class="entry-content">
-                <p>
-				description:
-				<br>
-                  Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
-                  Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
-                </p>
-                <div class="read-more">
-                  <a href="blog-single.html">Apply</a>
-                </div>
-              </div>
-
-            </article><!-- End blog entry -->
-
-            
-
-            
-
-            
-
-            <div class="blog-pagination">
-              <ul class="justify-content-center">
-                <li class="disabled"><i class="icofont-rounded-left"></i></li>
-                <li><a href="#">1</a></li>
-                <li class="active"><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#"><i class="icofont-rounded-right"></i></a></li>
-              </ul>
-            </div>
-
-          </div><!-- End blog entries list -->
-
-        </div>
-
-      </div>
-    </section><!-- End Blog Section -->
+          </section>
+          ";
+        }
+    ?>
+      
 
   </main><!-- End #main -->
 
