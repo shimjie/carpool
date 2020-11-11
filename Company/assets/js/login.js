@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     $('.form-panel.two').not('.form-panel.two.active').on('click', function(e) {
       e.preventDefault();
       var panelTwo = $('.form-panel.two')[0].scrollHeight;
@@ -20,9 +21,6 @@ $(document).ready(function() {
         'height': panelOne
       }, 200);
 
-      $('#datetimepicker').datetimepicker({
-        locale: 'ru'
-      });
     });
 
     $(".form-toggle.loginpageclosebtn").on('click', function(e) {

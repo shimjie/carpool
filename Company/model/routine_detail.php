@@ -21,13 +21,14 @@ class routine{
     $phone,
     $email_open_status,
     $email,
-    $status;
+    $status,
+    $request_type;
 
     function __construct($id, $userid, $type, $pub_date, $start_area_id, $region_start, $area_start, $start_time, 
                             $des_area_id, $region_des, $area_des, $return_time, 
                             $passager_num, $description, $valid_time,
                             $user_perName, $phone_open_status, $phone, $email_open_status, $email,
-                            $status){
+                            $status, $request_type){
         $this->id = $id;
         $this->userid = $userid;
         $this->type = $type;
@@ -52,6 +53,7 @@ class routine{
         $this->email_open_status = $email_open_status;
         $this->email = $email;
         $this->status = $status;
+        $this->request_type = $request_type;
     }
 
     public function GetId(){
@@ -137,5 +139,10 @@ class routine{
     function GetStatus(){
         return $this->status;
     }
+
+    function GetRequestType(){
+        return $this->request_type;
+    }
+    
 }
 ?>

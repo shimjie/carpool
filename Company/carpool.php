@@ -1,7 +1,7 @@
 <?php
     // Start the session
     session_start();
-    require "controller/routinecontroller/routine-load.php"
+    require "controller/routinecontroller/routine-load.php";
 ?>
 
 <!doctype html>
